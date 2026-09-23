@@ -53,16 +53,33 @@ public class Main {
 		int fries = in.nextInt();
 		in.nextLine();
 		
-		int totalPrice = cheeseBurger * 10 + hotDog * 8 + chickenSandwich * 10 + doubleCheeseBurger * 15 + fries * 5;
+		int initialTotalPrice = cheeseBurger * 10 + hotDog * 8 + chickenSandwich * 10 + doubleCheeseBurger * 15 + fries * 5;
 		
+		System.out.println("Initial price:" + initialTotalPrice );
 		
-		if (totalPrice > 30){
-			System.out.println( totalPrice * 0.90 );
-		} else if (totalPrice > 50){
-			System.out.println( totalPrice * 0.80 );
-		} else {
-			
+		double priceRemove1, priceRemove2;
+		
+		double tax;
+		
+		double totalPrice;
+
+		
+		if (initialTotalPrice > 30){
+			priceRemove1 = initialTotalPrice * 0.90;
+			tax = priceRemove1 * 0.13;
+			totalPrice = priceRemove1 + tax;
+			System.out.println("Initial price:" + initialTotalPrice );
+			System.out.println("Tax (13%):" + "$" + tax);
+			System.out.println("Grand total:" + "$" + totalPrice);
+		} else if (initialTotalPrice > 50){
+			priceRemove2 = initialTotalPrice * 0.80;
+			tax = priceRemove2 * 0.13;
+			totalPrice = priceRemove2 + tax;
+			System.out.println("Initial price:" + initialTotalPrice );
+			System.out.println("Tax (13%):" + "$" + tax);
+			System.out.println("Grand total:" + "$" + totalPrice);
 		}
+			
 	
 		
 		
