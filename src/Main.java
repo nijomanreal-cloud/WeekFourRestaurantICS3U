@@ -55,31 +55,51 @@ public class Main {
 		
 		int initialTotalPrice = cheeseBurger * 10 + hotDog * 8 + chickenSandwich * 10 + doubleCheeseBurger * 15 + fries * 5;
 		
-		System.out.println("Initial price:" + initialTotalPrice );
+		double priceRemove1, priceRemove2, tax, totalPrice = 0;
 		
-		double priceRemove1, priceRemove2;
-		
-		double tax;
-		
-		double totalPrice;
-
-		
-		if (initialTotalPrice > 30){
-			priceRemove1 = initialTotalPrice * 0.90;
+		if (initialTotalPrice > 50){
+			priceRemove1 = initialTotalPrice * 0.80;
 			tax = priceRemove1 * 0.13;
+			tax*=100;
+			tax = Math.round(tax);
+			tax /=100;
 			totalPrice = priceRemove1 + tax;
-			System.out.println("Initial price:" + initialTotalPrice );
-			System.out.println("Tax (13%):" + "$" + tax);
-			System.out.println("Grand total:" + "$" + totalPrice);
-		} else if (initialTotalPrice > 50){
-			priceRemove2 = initialTotalPrice * 0.80;
+			System.out.println("Initial price: $" + initialTotalPrice );
+			System.out.println("Tax (13%): " + "$" + tax);
+			totalPrice*=100;
+			totalPrice = Math.round(totalPrice);
+			totalPrice /=100;
+			System.out.println("Grand total: " + "$" + totalPrice);
+		} else if (initialTotalPrice > 30){
+			priceRemove2 = initialTotalPrice * 0.90;
 			tax = priceRemove2 * 0.13;
+			tax*=100;
+			tax = Math.round(tax);
+			tax /=100;
 			totalPrice = priceRemove2 + tax;
-			System.out.println("Initial price:" + initialTotalPrice );
-			System.out.println("Tax (13%):" + "$" + tax);
-			System.out.println("Grand total:" + "$" + totalPrice);
+			System.out.println("Initial price: $" + initialTotalPrice );
+			System.out.println("Tax (13%): " + "$" + tax);
+			totalPrice*=100;
+			totalPrice = Math.round(totalPrice);
+			totalPrice /=100;
+			System.out.println("Grand total: " + "$" + totalPrice);
 		}
 			
+		System.out.println("How much would you like to pay?");
+		int payment = in.nextInt();
+		in.nextLine();
+		
+		double change;
+		change = payment - totalPrice;
+		change*=100;
+		change = Math.round(change);
+		change /=100;
+		System.out.println("Change: $" + change);
+		
+		if (change < 0) {
+			System.out.println("You still owe me money buddy/");
+		}
+		
 	
 		
 		
