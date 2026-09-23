@@ -27,7 +27,45 @@ public class Main {
 
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
-
+		
+		System.out.println("Name: Nico");
+		System.out.println("Class: ICS3U");
+		System.out.println("Date: Friday Sept. 25");
+		System.out.println("Project Name: Restaurant");
+		
+		System.out.println("How much cheese burgers would you like for $10 each?");
+		int cheeseBurger = in.nextInt();
+		in.nextLine();
+		
+		System.out.println("How much hotdogs would you like for $8 each?");
+		int hotDog = in.nextInt();
+		in.nextLine();
+		
+		System.out.println("How much chicken sandwiches would you like for $10 each?");
+		int chickenSandwich = in.nextInt();
+		in.nextLine();
+		
+		System.out.println("How much double cheese burgers would you like for $15 each?");
+		int doubleCheeseBurger = in.nextInt();
+		in.nextLine();
+		
+		System.out.println("How much french fries would you like for $5 each?");
+		int fries = in.nextInt();
+		in.nextLine();
+		
+		int totalPrice = cheeseBurger * 10 + hotDog * 8 + chickenSandwich * 10 + doubleCheeseBurger * 15 + fries * 5;
+		
+		
+		if (totalPrice > 30){
+			System.out.println( totalPrice * 0.90 );
+		} else if (totalPrice > 50){
+			System.out.println( totalPrice * 0.80 );
+		} else {
+			
+		}
+	
+		
+		
 	}
 
 }
