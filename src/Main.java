@@ -97,7 +97,7 @@ public class Main {
 		System.out.println("Change: $" + change);
 		
 		if (change < 0) {
-			System.out.println("You still owe me money buddy/");
+			System.out.println("You still owe me money buddy.");
 		}
 		
 	
